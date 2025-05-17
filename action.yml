@@ -55,13 +55,7 @@ runs:
         sudo apt-get install python3-vcstool
         vcs import --input https://raw.githubusercontent.com/ros2/ros2/${{ inputs.ros_distro }}/ros2.repos ros-workspace/src
         vcs import --input ${{ github.action_path }}/repos.yaml ros-workspace/src
-    
-    - name: Downgrade CMake to build yaml_cpp
-      shell: bash -eux {0}
-      run: |
-        sudo apt-get purge -y cmake
-        sudo apt-get install -y cmake=3.24.*
-
+   
     - name: Checkout rmw_wasm middleware
       if: ${{ inputs.rmw_wasm }}
       uses: actions/checkout@v4
