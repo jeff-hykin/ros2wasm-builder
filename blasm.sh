@@ -116,17 +116,6 @@ done
 
 echo "[BLASM]: Commencing build."
 
-
-sudo apt-get remove --purge --auto-remove cmake -y
-            wget https://github.com/Kitware/CMake/releases/download/v3.24.4/cmake-3.24.4-linux-x86_64.sh
-            chmod +x cmake-3.24.4-linux-x86_64.sh
-            sudo mkdir /opt/cmake
-            sudo ./cmake-3.24.4-linux-x86_64.sh --prefix=/opt/cmake --skip-license
-            echo "/opt/cmake/bin" >> "$PATH"
-
-which cmake
-cmake --version
-
 colcon build \
     ${package_args} ${package_ignore} ${verbose_args} \
     --packages-skip-build-finished \
