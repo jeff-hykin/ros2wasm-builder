@@ -57,6 +57,7 @@ runs:
         vcs import --input ${{ github.action_path }}/repos.yaml ros-workspace/src
     
     - name: Downgrade CMake to build yaml_cpp
+      shell: bash -eux {0}
       run: |
         sudo apt-get purge -y cmake
         sudo apt-get install -y cmake=3.24.*
