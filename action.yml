@@ -101,7 +101,7 @@ runs:
         if [${{ inputs.debug }}]; then ${{ github.action_path }}/blasm.sh -d -v -u ${{ inputs.package }}; else ${{ github.action_path }}/blasm.sh -u ${{ inputs.package }}; fi
 
     - name: Upload artifacts for package
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.package }}-artifacts
         path: |
