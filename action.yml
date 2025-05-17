@@ -1,4 +1,4 @@
-name: ros2wasm-builder-jeff
+name: ros2wasm-builder
 description: "Cross-compiles ROS 2 packages to WASM"
 branding:
   icon: "box"
